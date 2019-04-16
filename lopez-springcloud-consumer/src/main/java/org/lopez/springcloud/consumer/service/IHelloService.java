@@ -5,7 +5,7 @@ import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-@FeignClient(name = "provider01", fallback = HelloServiceHystrix.class)
+@FeignClient(name = "lopez-springcloud-provider", fallback = HelloServiceHystrix.class)
 public interface IHelloService {
 	@RequestMapping(value = "/hello")
 	public String hello(@RequestParam(value = "name") String name);
