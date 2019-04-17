@@ -12,9 +12,14 @@ server:
 eureka:
   instance:
     hostname: peer1
+        # 服务续约任务调用的间隔时间    lease-renewal-interval-in-seconds: 30
+        # 服务时效的时间
+    lease-expiration-duration-in-seconds: 90
   client:
     serviceUrl:
       defaultZone: http://peer2:9002/eureka/,http://peer3:9003/eureka/
+#    register-with-eureka: false
+#    fetch-registry: false
 ---
 spring:
   application:
@@ -25,9 +30,13 @@ server:
 eureka:
   instance:
     hostname: peer2
+    lease-renewal-interval-in-seconds: 30
+    lease-expiration-duration-in-seconds: 90    
   client:
     serviceUrl:
       defaultZone: http://peer1:9001/eureka/,http://peer3:9003/eureka/
+#    register-with-eureka: false
+#    fetch-registry: false      
 ---
 spring:
   application:
@@ -38,6 +47,10 @@ server:
 eureka:
   instance:
     hostname: peer3
+    lease-renewal-interval-in-seconds: 30
+    lease-expiration-duration-in-seconds: 90    
   client:
     serviceUrl:
       defaultZone: http://peer1:9001/eureka/,http://peer2:9002/eureka/
+#    register-with-eureka: false
+#    fetch-registry: false

@@ -6,10 +6,10 @@ import org.springframework.cloud.client.circuitbreaker.EnableCircuitBreaker;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 
 @EnableCircuitBreaker
-@SpringBootApplication
 @EnableDiscoveryClient
+@SpringBootApplication
 public class SpringCloudProviderApplication {
-    public static void main(String[] args) {
-        SpringApplication.run(SpringCloudProviderApplication.class, args);
-    }
+	public static void main(String[] args) {
+		SpringApplication.run(SpringCloudProviderApplication.class, args);
+	}
 }
